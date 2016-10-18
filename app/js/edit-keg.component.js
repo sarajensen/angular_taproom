@@ -9,17 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var keg_model_1 = require('./keg.model');
+var EditKeg = (function () {
+    function EditKeg() {
     }
-    AppComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', keg_model_1.Keg)
+    ], EditKeg.prototype, "childSelectedKeg", void 0);
+    EditKeg = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <div class=\"container\">\n    <h1>Dafunk!</h1>\n    <keg-list></keg-list>\n  </div>\n  "
+            selector: 'edit-keg',
+            template: "\n    <div *ngIf=\"childSelectedKeg\">\n      <h1>Edit Keg</h1>\n      <div>\n        <label>Change name:</label>\n        <input [(ngModel)]=\"childSelectedKeg.name\">\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], EditKeg);
+    return EditKeg;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.EditKeg = EditKeg;
+//# sourceMappingURL=edit-keg.component.js.map
