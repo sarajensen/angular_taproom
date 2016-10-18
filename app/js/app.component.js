@@ -11,11 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.selectedKeg = null;
     }
+    AppComponent.prototype.showDetails = function (clickedKeg) {
+        this.selectedKeg = clickedKeg;
+    };
+    AppComponent.prototype.finishedEditing = function () {
+        this.selectedKeg = null;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <div class=\"container\">\n    <h1>Dafunk!</h1>\n    <keg-list></keg-list>\n  </div>\n  "
+            template: "\n  <div class=\"container\">\n  <h1>Give Me a Beer Bar</h1>\n    <keg-list\n      (clickSender)=\"showDetails($event)\"\n    ></keg-list>\n    <edit-keg\n      [childSelectedKeg]=\"selectedKeg\"\n      (doneClickedSender)=\"finishedEditing()\"\n    ></edit-keg>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

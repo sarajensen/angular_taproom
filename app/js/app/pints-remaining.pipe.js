@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var EditKeg = (function () {
-    function EditKeg() {
+var PintsRemaining = (function () {
+    function PintsRemaining() {
     }
-    return EditKeg;
+    PintsRemaining.prototype.transform = function (input, pints) {
+    };
+    return PintsRemaining;
 }());
-EditKeg = __decorate([
-    core_1.Component({
-        selector: 'edit-keg',
-        template: "\n  "
+PintsRemaining = __decorate([
+    core_1.Pipe({
+        name: "pintsRemaining",
+        pure: false
     }),
     __metadata("design:paramtypes", [])
-], EditKeg);
-exports.EditKeg = EditKeg;
-//# sourceMappingURL=keg-edit.component.js.map
+], PintsRemaining);
+exports.PintsRemaining = PintsRemaining;
+//# sourceMappingURL=pints-remaining.pipe.js.map

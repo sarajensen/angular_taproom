@@ -8,23 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var keg_model_1 = require("./keg.model");
-var EditKeg = (function () {
-    function EditKeg() {
+var core_1 = require('@angular/core');
+var PintsRemaining = (function () {
+    function PintsRemaining() {
     }
-    return EditKeg;
+    PintsRemaining.prototype.transform = function (input, pints) {
+    };
+    PintsRemaining = __decorate([
+        core_1.Pipe({
+            name: "pintsRemaining",
+            pure: false
+        }), 
+        __metadata('design:paramtypes', [])
+    ], PintsRemaining);
+    return PintsRemaining;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", keg_model_1.Keg)
-], EditKeg.prototype, "childSelectedKeg", void 0);
-EditKeg = __decorate([
-    core_1.Component({
-        selector: 'edit-keg',
-        template: "\n    <div *ngIf=\"childSelectedKeg\">\n      <h1>Edit Keg</h1>\n      <div>\n        <label>Change name:</label>\n        <input [(ngModel)]=\"childSelectedKeg.name\">\n      </div>\n    </div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], EditKeg);
-exports.EditKeg = EditKeg;
-//# sourceMappingURL=edit-keg.component.js.map
+exports.PintsRemaining = PintsRemaining;
+//# sourceMappingURL=pints-remaining.pipe.js.map

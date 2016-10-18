@@ -12,15 +12,23 @@ var core_1 = require('@angular/core');
 var keg_model_1 = require('./keg.model');
 var EditKeg = (function () {
     function EditKeg() {
+        this.doneClickedSender = new core_1.EventEmitter();
     }
+    EditKeg.prototype.boomCookedDone = function () {
+        this.doneClickedSender.emit();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', keg_model_1.Keg)
     ], EditKeg.prototype, "childSelectedKeg", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], EditKeg.prototype, "doneClickedSender", void 0);
     EditKeg = __decorate([
         core_1.Component({
             selector: 'edit-keg',
-            template: "\n    <div *ngIf=\"childSelectedKeg\">\n      <h1>Edit Keg</h1>\n      <div>\n        <label>Change name:</label>\n        <input [(ngModel)]=\"childSelectedKeg.name\">\n      </div>\n    </div>\n  "
+            template: "\n    <div *ngIf=\"childSelectedKeg\">\n      <h1>Edit Keg</h1>\n      <div>\n        <label>Change name:</label>\n        <input [(ngModel)]=\"childSelectedKeg.name\">\n        <label>Change brand:</label>\n        <input [(ngModel)]=\"childSelectedKeg.brand\">\n        <label>Change style:</label>\n        <input [(ngModel)]=\"childSelectedKeg.style\">\n        <label>Change price:</label>\n        <input [(ngModel)]=\"childSelectedKeg.price\">\n        <label>Change abv:</label>\n        <input [(ngModel)]=\"childSelectedKeg.abv\">\n        <button (click)=\"boomCookedDone()\">Done</button>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EditKeg);

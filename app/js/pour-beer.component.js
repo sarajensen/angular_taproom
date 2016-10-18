@@ -15,7 +15,10 @@ var PourBeerComponent = (function () {
         this.pourBeerSender = new core_1.EventEmitter();
     }
     PourBeerComponent.prototype.pourButtonClicked = function (childKeg) {
-        childKeg.pints -= 20;
+        childKeg.pints -= 1;
+    };
+    PourBeerComponent.prototype.swapKeg = function (childKeg) {
+        childKeg.pints = 124;
     };
     __decorate([
         core_1.Input(), 
@@ -28,7 +31,7 @@ var PourBeerComponent = (function () {
     PourBeerComponent = __decorate([
         core_1.Component({
             selector: 'pour-beer',
-            template: "\n    <button (click)=\"pourButtonClicked(childKeg)\">Pour Beer</button>\n  "
+            template: "\n    <button (click)=\"pourButtonClicked(childKeg)\">Pour Beer</button>\n    <button (click)=\"swapKeg(childKeg)\">Swap Keg</button>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], PourBeerComponent);

@@ -5,6 +5,7 @@ import { Keg } from './keg.model';
   selector:'pour-beer',
   template:`
     <button (click)="pourButtonClicked(childKeg)">Pour Beer</button>
+    <button (click)="swapKeg(childKeg)">Swap Keg</button>
   `
 })
 
@@ -12,6 +13,9 @@ export class PourBeerComponent {
   @Input() childKeg: Keg;
   @Output() pourBeerSender = new EventEmitter();
   pourButtonClicked(childKeg) {
-    childKeg.pints -=20;
+    childKeg.pints -=1;
+  }
+  swapKeg(childKeg) {
+    childKeg.pints = 124;
   }
 }
